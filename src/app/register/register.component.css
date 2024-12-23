@@ -1,0 +1,85 @@
+body {
+  background-color: #f0f2f5;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.register-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-image img {
+  max-width: 100%;
+  height: 100vh;
+  object-fit: contain;
+}
+
+.register-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  width: 350px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem;
+  color: #3f51b5;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+mat-datepicker-content, mat-calendar {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #3f51b5;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+  background-color: #303f9f;
+  border-color: #303f9f;
+  color: #ffffff;
+}

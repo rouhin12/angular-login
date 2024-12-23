@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "fd9d",
+      "username": "testuser",
+      "password": "testpassword",
+      "name": "Rouhin",
+      "age": 20,
+      "dateOfBirth": "2004-09-18T18:30:00.000Z"
+    },
+    {
+      "id": "458d",
+      "username": "testuser",
+      "password": "testpassword",
+      "name": "sdsddsds",
+      "age": 20,
+      "dateOfBirth": "2003-06-01T18:30:00.000Z"
+    },
+    {
+      "id": "e783",
+      "username": "deep",
+      "password": "deep",
+      "name": "Deep",
+      "age": 27,
+      "dateOfBirth": "1997-05-03T18:30:00.000Z"
+    }
+  ]
+}
