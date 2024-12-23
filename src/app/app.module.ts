@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { MainPageComponent } from './mainpage/mainpage.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     // ...existing code...
     LayoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

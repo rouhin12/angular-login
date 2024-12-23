@@ -1,5 +1,25 @@
-<div>
-  <h1>Dashboard</h1>
-  <!-- Add your dashboard content here -->
+<div class="dashboard-container">
+  <mat-card>
+    <mat-card-title>Welcome, {{ user.name }}</mat-card-title>
+    <mat-card-content>
+      <p>Username: {{ user.username }}</p>
+      <p>Age: {{ user.age }}</p>
+      <p>Date of Birth: {{ user.dateOfBirth | date:'longDate' }}</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Statistics</mat-card-title>
+    <mat-card-content>
+      <!-- <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"> -->
+      <!-- </canvas> -->
+      <canvas id="myChart" width="700" height="250" #mychart></canvas>
+
+    </mat-card-content>
+  </mat-card>
   <button (click)="stayOnDashboard()">Log Out</button>
 </div>

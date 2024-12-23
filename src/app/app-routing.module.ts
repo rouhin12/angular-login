@@ -5,14 +5,17 @@ import { RegisterComponent } from './register/register.component';
 import { MainPageComponent } from './mainpage/mainpage.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard], children: [
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'profile', component: ProfileComponent }
+  ]},
   { path: '**', redirectTo: '' }
 ];
 
