@@ -13,10 +13,7 @@
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">Get Weather</button>
       </form>
-      <div *ngIf="weatherData.length">
-        <h3>Weather Data</h3>
-        <p *ngFor="let data of weatherData">{{ data.time }}: {{ data.temperature }}°C</p>
-      </div>
+      <canvas id="weatherChart" width="700" height="250" #weatherChart></canvas>
     </mat-card-content>
   </mat-card>
 </div>
