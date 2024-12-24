@@ -2,10 +2,10 @@
   <mat-sidenav #sidenav mode="side" opened>
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item (click)="redirect('/layout/dashboard')">Dashboard</a>
-      <a mat-list-item (click)="redirect('/layout/profile')">Profile</a>
-      <a mat-list-item (click)="redirect('/layout/weather')">Weather</a>
-      <a mat-list-item routerLink="/settings">Settings</a>
+      <a mat-list-item [routerLinkActive]="['active']" routerLink="/layout/dashboard">Dashboard</a>
+      <a mat-list-item [routerLinkActive]="['active']" routerLink="/layout/profile">Profile</a>
+      <a mat-list-item [routerLinkActive]="['active']" routerLink="/layout/weather">Weather</a>
+      <a mat-list-item [routerLinkActive]="['active']" routerLink="/settings">Settings</a>
       <a mat-list-item (click)="logout()">Logout</a>
     </mat-nav-list>
   </mat-sidenav>

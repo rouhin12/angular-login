@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 //import { MatButtonModule } from '@angular/button';
@@ -13,7 +13,7 @@ import { DatePipe } from '@angular/common';
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'],
-  imports: [MatToolbarModule, MatCardModule, MatSidenavModule, MatListModule, MatIconModule, CommonModule, RouterOutlet],
+  imports: [MatToolbarModule, MatCardModule, MatSidenavModule, MatListModule, MatIconModule, CommonModule, RouterOutlet, RouterModule],
   providers: [DatePipe]
 })
 export class LayoutComponent {

@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { ChartsModule } from 'ng2-charts';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpService } from './http-service/http.service';
@@ -49,6 +50,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatListModule,
     ChartsModule,
     AppRoutingModule,
+    RouterModule,
     // ...existing code...
   ],
   providers: [HttpService, AuthService, AuthGuard],
