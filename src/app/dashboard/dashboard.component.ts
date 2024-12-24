@@ -1,10 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatCard, MatCardModule, MatCardTitle } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
-import { Chart } from 'chart.js';
-// import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-// import { Label } from 'ng2-charts';
+import { Chart, ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,9 +13,8 @@ import { Chart } from 'chart.js';
 export class DashboardComponent implements OnInit, AfterViewInit {
   user: any;
 
-  canvas: any;
-  ctx: any;
-  @ViewChild('mychart ') mychart!: any;
+  @ViewChild('lineChart') lineChart!: any;
+  @ViewChild('bubbleChart') bubbleChart!: any;
 
   constructor(private router: Router) {}
 
@@ -26,27 +23,30 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.canvas = this.mychart.nativeElement; 
-    this.ctx = this.canvas.getContext('2d');
+    this.createLineChart();
+    this.createBubbleChart();
+  }
 
-    let data: any =  {
+  createLineChart() {
+    const canvas = this.lineChart.nativeElement;
+    const ctx1 = canvas.getContext('2d');
+
+    const data1: ChartConfiguration = {
       type: 'line',
-      
       data: {
         datasets: [{
-          label: 'Höhenlinie',
+          label: 'Line Chart',
           backgroundColor: "rgba(255, 99, 132,0.4)",
           borderColor: "rgb(255, 99, 132)",
-          fill: true,
           data: [
-            { x: 1, y: 2 },
-            { x: 2500, y: 2.5 },
-            { x: 3000, y: 5 },
-            { x: 3400, y: 4.75 },
-            { x: 3600, y: 4.75 },
-            { x: 5200, y: 6 },
-            { x: 6000, y: 9 },
-            { x: 7100, y: 6 },
+            { x: 1, y: 2, r: 5 },
+            { x: 2500, y: 2.5, r: 10 },
+            { x: 3000, y: 5, r: 15 },
+            { x: 3400, y: 4.75, r: 20 },
+            { x: 3600, y: 4.75, r: 25 },
+            { x: 5200, y: 6, r: 30 },
+            { x: 6000, y: 9, r: 35 },
+            { x: 7100, y: 6, r: 40 },
           ],
         }]
       },
@@ -54,44 +54,81 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         responsive: true,
         title: {
           display: true,
-          text: 'Höhenlinie'
+          text: 'Line Chart'
         },
         scales: {
           xAxes: [{
             type: 'linear',
             position: 'bottom',
-            ticks: {
-              userCallback: function (tick: any) {
-                if (tick >= 1000) {
-                  return (tick / 1000).toString() + 'km';
-                }
-                return tick.toString() + 'm';
-              }
-            },
             scaleLabel: {
-              labelString: 'Länge',
               display: true,
+              labelString: 'X Axis'
             }
           }],
           yAxes: [{
             type: 'linear',
-            ticks: {
-              userCallback: function (tick: any) {
-                return tick.toString() + 'm';
-              }
-            },
             scaleLabel: {
-              labelString: 'Höhe',
-              display: true
+              display: true,
+              labelString: 'Y Axis'
             }
           }]
         }
       }
-    }
+    };
 
-    let myChart = new Chart(this.ctx, data);
+    new Chart(ctx1, data1);
+  }
 
+  createBubbleChart() {
+    const canvas = this.bubbleChart.nativeElement;
+    const ctx = canvas.getContext('2d');
 
+    const data: ChartConfiguration = {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'Bubble Chart',
+          backgroundColor: "rgba(255, 99, 132,0.4)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [
+            { x: 1, y: 2, r: 5 },
+            { x: 2500, y: 2.5, r: 10 },
+            { x: 3000, y: 5, r: 15 },
+            { x: 3400, y: 4.75, r: 20 },
+            { x: 3600, y: 4.75, r: 25 },
+            { x: 5200, y: 6, r: 30 },
+            { x: 6000, y: 9, r: 35 },
+            { x: 7100, y: 6, r: 40 },
+          ],
+        }]
+      },
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Bubble Chart'
+        },
+        scales: {
+        xAxes: [{
+            type: 'linear',
+            position: 'bottom',
+            scaleLabel: {
+              display: true,
+              labelString: 'X Axis'
+            }
+          }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: 'Y Axis'
+            }
+          }]
+        }
+      }
+    };
+
+    new Chart(ctx, data);
   }
 
   stayOnDashboard() {

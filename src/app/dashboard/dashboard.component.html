@@ -8,17 +8,15 @@
     </mat-card-content>
   </mat-card>
   <mat-card>
-    <mat-card-title>Statistics</mat-card-title>
+    <mat-card-title>Line Chart</mat-card-title>
     <mat-card-content>
-      <!-- <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType"> -->
-      <!-- </canvas> -->
-      <canvas id="myChart" width="700" height="250" #mychart></canvas>
-
+      <canvas id="lineChart" width="700" height="250" #lineChart></canvas>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Bubble Chart</mat-card-title>
+    <mat-card-content>
+      <canvas id="bubbleChart" width="700" height="250" #bubbleChart></canvas>
     </mat-card-content>
   </mat-card>
   <button (click)="stayOnDashboard()">Log Out</button>
