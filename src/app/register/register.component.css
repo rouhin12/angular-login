@@ -83,3 +83,17 @@ button:hover {
   border-color: #303f9f;
   color: #ffffff;
 }
+
+.login-option {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-option a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.login-option a:hover {
+  text-decoration: underline;
+}

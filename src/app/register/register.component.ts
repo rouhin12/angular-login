@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService, User } from '../http-service/http.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -12,7 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  imports: [FormsModule, MatButtonModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule]
+  imports: [FormsModule, MatButtonModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, RouterModule]
 })
 export class RegisterComponent {
   name: string = '';
