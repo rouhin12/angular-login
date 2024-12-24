@@ -6,6 +6,9 @@ export interface User {
   id: number;
   username: string;
   password: string;
+  name: string;
+  dateOfBirth: Date | null;
+  age: number | null;
 }
 
 export interface WeatherData {
@@ -31,6 +34,10 @@ export class HttpService {
 
   postData(endpoint: string, data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/${endpoint}`, data);
+  }
+
+  fetchUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 
   fetchWeather(latitude: number, longitude: number): Observable<WeatherResponse> {

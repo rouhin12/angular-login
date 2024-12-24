@@ -4,15 +4,25 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { WeatherComponent } from './weather/weather.component';
+import { MainPageComponent } from './mainpage/mainpage.component';
+import { RegisterComponent } from './register/register.component';
 
 export const routes: Routes = [
 
     {
-         path: '', redirectTo: 'login', pathMatch: 'full' ,
+         path: '', redirectTo: 'mainpage', pathMatch: 'full' ,
     },
     {
         path: 'login',
         component: LoginComponent,
+    },
+    {
+        path: 'mainpage',
+        component: MainPageComponent,
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
     },
     {
          path: 'layout',

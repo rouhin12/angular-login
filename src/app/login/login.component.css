@@ -10,9 +10,10 @@ body {
 
 .login-container {
   display: flex;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
 }
 
 .login-image {
@@ -24,8 +25,7 @@ body {
 
 .login-image img {
   max-width: 100%;
-  height: 100vh;
-  object-fit: contain;
+  height: auto;
 }
 
 .login-form {
@@ -36,7 +36,8 @@ body {
 }
 
 mat-card {
-  width: 350px;
+  width: 100%;
+  max-width: 400px;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -93,4 +94,18 @@ button:hover {
   background-color: #303f9f;
   border-color: #303f9f;
   color: #ffffff;
+}
+
+.register-option {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register-option a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.register-option a:hover {
+  text-decoration: underline;
 }
