@@ -1,0 +1,22 @@
+<div class="weather-container">
+  <mat-card>
+    <mat-card-title>Weather Information</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="fetchWeather()">
+        <mat-form-field appearance="fill">
+          <mat-label>Latitude</mat-label>
+          <input matInput [(ngModel)]="latitude" name="latitude" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Longitude</mat-label>
+          <input matInput [(ngModel)]="longitude" name="longitude" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Get Weather</button>
+      </form>
+      <div *ngIf="weatherData.length">
+        <h3>Weather Data</h3>
+        <p *ngFor="let data of weatherData">{{ data.time }}: {{ data.temperature }}°C</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

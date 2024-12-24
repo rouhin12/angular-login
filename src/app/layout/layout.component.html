@@ -4,6 +4,7 @@
     <mat-nav-list>
       <a mat-list-item (click)="redirect('/layout/dashboard')">Dashboard</a>
       <a mat-list-item (click)="redirect('/layout/profile')">Profile</a>
+      <a mat-list-item (click)="redirect('/layout/weather')">Weather</a>
       <a mat-list-item routerLink="/settings">Settings</a>
       <a mat-list-item (click)="logout()">Logout</a>
     </mat-nav-list>
@@ -18,16 +19,6 @@
       </span>
       <span>Dashboard</span>
     </mat-toolbar>
-    <!-- <div class="dashboard-container">
-      <div class="dashboard-content">
-        <mat-card>
-          <mat-card-title>Welcome to the Dashboard</mat-card-title>
-          <mat-card-content>
-            <p>This is your dashboard. Here you can manage your account, view statistics, and more.</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div> -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -6,6 +6,7 @@ import { MainPageComponent } from './mainpage/mainpage.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WeatherComponent } from './weather/weather.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard], children: [
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'profile', component: ProfileComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: 'weather', component: WeatherComponent }
   ]},
   { path: '**', redirectTo: '' }
 ];
