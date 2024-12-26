@@ -20,10 +20,6 @@ export interface WeatherResponse {
   hourly: WeatherData;
 }
 
-export interface ApiResponse<T> {
-  data: T;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -33,12 +29,12 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
-  getData<T>(endpoint: string): Observable<ApiResponse<T>> {
-    return this.http.get<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`);
+  getData(endpoint: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${endpoint}`);
   }
 
-  postData<T>(endpoint: string, data: T): Observable<ApiResponse<T>> {
-    return this.http.post<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`, data);
+  postData(endpoint: string, data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/${endpoint}`, data);
   }
 
   fetchUsers(): Observable<User[]> {
