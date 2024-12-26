@@ -9,7 +9,6 @@ export interface User {
   name: string;
   dateOfBirth: Date | null;
   age: number | null;
-  token?: string; // Add token property
 }
 
 export interface WeatherData {
@@ -21,28 +20,23 @@ export interface WeatherResponse {
   hourly: WeatherData;
 }
 
-export interface ApiResponse<T> {
-  data: T;
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+  postData(arg0: string, newUser: User) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-  getData<T>(endpoint: string): Observable<ApiResponse<T>> {
-    return this.http.get<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`);
-  }
-
-  postData<T>(endpoint: string, data: T): Observable<ApiResponse<T>> {
-    return this.http.post<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`, data);
-  }
-
-  fetchUsers(): Observable<User[]> {
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
+  }
+
+  postUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/users`, user);
   }
 
   fetchWeather(latitude: number, longitude: number): Observable<WeatherResponse> {

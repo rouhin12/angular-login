@@ -25,10 +25,10 @@ export class RegisterComponent {
 
   register() {
     const newUser: User = { id: 0, username: this.username, password: this.password, name: this.name, dateOfBirth: this.dateOfBirth, age: this.age };
-    this.httpService.postData('users', newUser).subscribe(() => {
+    this.httpService.postUser(newUser).subscribe(() => {
       alert('Registration successful');
       this.router.navigate(['/login']);
-    }, error => {
+    }, (error) => {
       console.error('Error registering user:', error);
       alert('An error occurred while registering. Please try again later.');
     });
