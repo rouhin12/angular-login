@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { User } from '../http-service/http.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,9 +10,9 @@ import { MatCardModule } from '@angular/material/card';
   imports: [CommonModule, MatCardModule]
 })
 export class ProfileComponent implements OnInit {
-  user: any;
+  user: User | null = null;
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.user = JSON.parse(localStorage.getItem('user') || 'null');
   }
 }
