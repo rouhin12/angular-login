@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     const data1: ChartConfiguration = {
       type: 'line',
       data: {
-        datasets: [{  
+        datasets: [{
           label: 'Line Chart',
           backgroundColor: "rgba(255, 99, 132,0.4)",
           borderColor: "rgb(255, 99, 132)",

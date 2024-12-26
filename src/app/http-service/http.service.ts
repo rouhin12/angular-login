@@ -31,7 +31,15 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<User[]> {
+  getData<T>(endpoint: string): Observable<ApiResponse<T>> {
+    return this.http.get<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`);
+  }
+
+  postData<T>(endpoint: string, data: T): Observable<ApiResponse<T>> {
+    return this.http.post<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`, data);
+  }
+
+  fetchUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 
