@@ -9,8 +9,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
-import { User } from '../http-service/http.service';
-
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -19,12 +17,12 @@ import { User } from '../http-service/http.service';
   providers: [DatePipe]
 })
 export class LayoutComponent {
-  user: User | null = null;
+  user: any;
 
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user') || 'null');
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   logout() {

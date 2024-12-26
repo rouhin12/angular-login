@@ -3,7 +3,6 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { Chart, ChartConfiguration } from 'chart.js';
-import { User } from '../http-service/http.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +11,7 @@ import { User } from '../http-service/http.service';
   imports: [MatCardModule, DatePipe]
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  user: User | null = null;
+  user: any;
 
   @ViewChild('lineChart') lineChart!: any;
   @ViewChild('bubbleChart') bubbleChart!: any;
@@ -20,7 +19,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user') || 'null');
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   ngAfterViewInit() {

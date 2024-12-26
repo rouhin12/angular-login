@@ -11,7 +11,7 @@ export class AuthService {
     return !!localStorage.getItem('user');
   }
 
-  login(user: { username: string; password: string }): void {
+  login(user: any): void {
     console.log('AuthService: Logging in user:', user); // Log the user for debugging
     localStorage.setItem('user', JSON.stringify(user));
   }
