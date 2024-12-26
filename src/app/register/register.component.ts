@@ -24,7 +24,7 @@ export class RegisterComponent {
   constructor(private httpService: HttpService, private router: Router) {}
 
   register() {
-    const newUser: User = { id: 0, username: this.username, password: this.password, name: this.name, dateOfBirth: this.dateOfBirth, age: this.age };
+    const newUser: User = { id: 0, username: this.username, password: this.password, name: this.name, dateOfBirth: this.dateOfBirth, age: this.age, token: '' };
     this.httpService.postUser(newUser).subscribe(() => {
       alert('Registration successful');
       this.router.navigate(['/login']);

@@ -9,6 +9,7 @@ export interface User {
   name: string;
   dateOfBirth: Date | null;
   age: number | null;
+  token: string;
 }
 
 export interface WeatherData {
