@@ -20,13 +20,15 @@ export interface WeatherResponse {
   hourly: WeatherData;
 }
 
+export interface ApiResponse<T> {
+  data: T;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  postData(arg0: string, newUser: User) {
-    throw new Error('Method not implemented.');
-  }
+
   private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
